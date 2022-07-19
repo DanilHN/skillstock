@@ -194,7 +194,7 @@
     
     .features__title {
         font-size: 14px;
-        color: #2d3033;
+        color: gray;
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 20px;
@@ -323,13 +323,60 @@
     /* Reviews ===================================================================== */
     
     .reviews {
-        background-color: #53354a;
+        background-color: #b6dbec;
         overflow: hidden;
+    }
+    
+    .reviews__slider {
+        height: 500px;
+        overflow: hidden;
+    }
+    /* .reviews__slider .slick-initialized {
+        height: auto;
+    } */
+    
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0 0 10px;
+        list-style: none;
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+    }
+    
+    .slick-dots li {
+        margin: 0 5px;
+    }
+    
+    .slick-dots button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: .5;
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        font-size: 0;
+        color: transparent;
+    }
+    
+    .slick-dots button:focus {
+        outline: 0;
+    }
+    
+    .slick-dots .slick-active button {
+        opacity: 1;
     }
     
     .reviews__item {
         display: flex;
         flex-wrap: wrap;
+        overflow: hidden;
     }
     
     .reviews__photo {
@@ -360,11 +407,11 @@
         font-size: 36px;
         line-height: 1.2;
         font-style: italic;
-        color: #fff;
+        color: gray;
     }
     
     .reviews__author {
-        color: #fff;
+        color: gray;
         font-size: 13px;
         font-weight: 700;
         text-transform: uppercase;
@@ -393,7 +440,7 @@
     /* footer ===================================================================== */
     
     .footer {
-        background-color: #3a3e64;
+        background-color: #96bdf0;
     }
     
     .footer__inner {
@@ -439,7 +486,7 @@
     /* copyright ===================================================================== */
     
     .copyright {
-        background-color: #313454;
+        background-color: #9597ac;
         padding: 20px 0;
     }
     
@@ -504,10 +551,23 @@
         /* nav ==========*/
         .nav {
             display: none;
+            width: 100%;
+            flex-direction: column;
+            background-color: rgba(255, 254, 223, .5);
+            text-align: right;
+            position: absolute;
+            top: 100%;
+            right: 0;
+        }
+        .nav.show {
+            display: flex;
+        }
+        .nav__link {
+            padding: 7px 15px;
         }
         /* burger ==========*/
         .burger__item {
-            display: block;
+            display: flex;
         }
         /* intro ==========*/
         .intro__title {
@@ -537,13 +597,13 @@
         }
         /* reviews ==========*/
         .reviews__photo {
-            width: 100%;
+            width: 50%;
             margin: 15px 0 40px;
             overflow: hidden;
         }
         .reviews__content {
-            width: 100%;
-            padding: 0 15px 40px 15px;
+            width: 50%;
+            padding: 0 15px 40px 30px;
         }
     }
     
