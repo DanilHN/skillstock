@@ -9,9 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/style.css">
+    <meta name="discription" content="Skillsstock">
+    <meta name="keywords" content="web, developer, skill">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/Img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/Img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <title>Skillsstock</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
@@ -27,14 +39,14 @@
                 <div class="header__logo">
                     <img src="/Img/skillsstock.png" alt="">
                 </div>
-                <nav class="nav">
-                    <a href="#" class="nav__link">Features</a>
-                    <a href="#" class="nav__link">Works</a>
-                    <a href="#" class="nav__link">Our Team</a>
-                    <a href="#" class="nav__link">Testimonials</a>
-                    <a href="#" class="nav__link">Download</a>
+                <nav class="nav" id='nav'>
+                    <a href="#" class="nav__link" data-scroll="#features">Features</a>
+                    <a href="#" class="nav__link" data-scroll="#works">Works</a>
+                    <a href="#" class="nav__link" data-scroll="#team">Our Team</a>
+                    <a href="#" class="nav__link" data-scroll="#reviews">Testimonials</a>
+                    <a href="#" class="nav__link" data-scroll="#download">Download</a>
                 </nav>
-                <button class="burger" type="button">
+                <button class="burger" type="button" id="navToggle">
                     <span class="burger__item">Menu</span>
                 </button>
 
@@ -54,7 +66,7 @@
 
     <!-- Fetures -->
 
-    <div class="container">
+    <div class="container" id="features">
         <div class="features">
             <div class="features__item">
                 <img class="features__icon" src="/Img/features/feature-1.png" alt="features__icon">
@@ -92,7 +104,7 @@
     <!-- /.Container -->
 
     <!-- Works -->
-    <div class="works">
+    <div class="works" id="works">
         <div class="works__item">
             <img class="works__photo" src="/Img/work/work-1.jpg" alt="">
             <div class="works__content">
@@ -154,7 +166,7 @@
     <!-- /.Works -->
 
     <!-- Team -->
-    <div class="team">
+    <div class="team" id="team">
         <div class="container">
             <div class="team__inner">
                 <div class="team__item">
@@ -233,22 +245,40 @@
     <!-- /. Team -->
 
     <!-- Reviews -->
-    <div class="reviews">
+    <div class="reviews" id="reviews">
         <div class="container">
-            <div class="reviews__item">
-                <div class="reviews__photo"> <img class="reviews__img" src="/Img/reviews/review-1.jpg" alt=""></div>
-                <div class="reviews__content">
-                    <div class="reviews_text">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</div>
-                    <div class="reviews__author">Susan Sims, Interaction Designer at XYZ</div>
+
+            <div class="reviews__slider" id="reviewsSlader">
+                <div class="slick__item">
+                    <div class="reviews__item">
+                        <div class="reviews__photo"> <img class="reviews__img" src="/Img/reviews/review-1.jpg" alt=""></div>
+                        <div class="reviews__content">
+                            <div class="reviews_text">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</div>
+                            <div class="reviews__author">Susan Sims, Interaction Designer at XYZ</div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="slick__item">
+                    <div class="reviews__item">
+                        <div class="reviews__photo"> <img class="reviews__img" src="/Img/reviews/review-2.jpg" alt=""></div>
+                        <div class="reviews__content">
+                            <div class="reviews_text">“Lorem ipsum . Unde odio fuga aperiam corrupti sapiente ullam ut! Repellat ipsam illum culpa.”
+                            </div>
+                            <div class="reviews__author">Susan Sims, Interaction Designer at XYZ</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
             <!-- /.reviews__inner -->
         </div>
         <!-- /.container  -->
     </div>
     <!-- /.reviews -->
     <!-- download-->
-    <div class="download">
+    <div class="download" id="download">
         <div class="container">
             <h3 class="download__title">Are You Ready to Start? Download Now For Free!</h3>
             <div class="download__text">
@@ -266,8 +296,8 @@
                 <div class="footer__block">
                     <h4 class="footer__title">Location</h4>
                     <address class="footer__addres">
-                        <div>3481 Melrose Plac</div>
-                        <div>Beverly Hills, CA 9021</div>
+                        <div>36555 Egestas Eget</div>
+                        <div>Beverly Hills, US 2031</div>
                     </address>
                 </div>
                 <div class="footer__block">
@@ -294,13 +324,14 @@
             <div class="container">
                 <div class="copyright__text">
                     <div>Original design modified, not used for commercial purposes</div>
-                    <div>Original design made with <span>by Kamal Chaneman</span></div>
+                    <div>Original design made with <span>by Developer</span></div>
                 </div>
             </div>
         </div>
 
     </footer>
     <!-- javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/app.js"></script>
 </body>
 
